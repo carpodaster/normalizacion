@@ -6,7 +6,7 @@ of your String instance.
 
 
 === Installation
- $ gem install carpodaster-string_normalizr --source http://gems.github.com
+ $ gem install string_normalizr
 
 Or use it as a plugin with your Rails app:
 
