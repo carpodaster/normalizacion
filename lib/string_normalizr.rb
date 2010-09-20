@@ -71,6 +71,7 @@ module AegisNet # :nodoc:
       # * +options+: optional Hash for normalization customization
       #
       # == Available options
+      # * <tt>:downcase</tt> - convert to lower case (true|false, default: false)
       # * <tt>:strip</tt> - trim leading and trailing whitespaces (true|false, default: true)
       # * <tt>:replace_whitespaces</tt> - replace whitespaces within the string with +str+
       #   or set to +false+ to leave whitespaces alone. Makes little
