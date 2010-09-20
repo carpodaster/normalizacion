@@ -15,12 +15,14 @@ Or use it as a plugin with your Rails app:
 === Usage
  "hellö world".normalize
 
-=== Caveats
-* Tests seem to have difficulties with multibyte characters right now.
-
 === .plan
-* Add option-hash to customize the normalization
+* support custom collation hash
+* support more special chars by default
+* handle punctuation marks
 
+=== Changelog
+* 0.2: Normalization can now be customized via an options hash.
+* 0.1: Initial version
 
 ---
 

@@ -9,7 +9,7 @@ Rake::TestTask.new("test") do |t|
   t.verbose = false
 end
 
-Echoe.new('string_normalizr', '0.1') do |p|
+Echoe.new('string_normalizr', '0.2') do |p|
   p.description    = "Let String instances be conviently normalized"
   p.url            = "http://github.com/carpodaster/string_normalizr"
   p.author         = "Carsten Zimmermann"
