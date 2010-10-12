@@ -86,7 +86,7 @@ module AegisNet # :nodoc:
       #
       def normalize(options = {})
         # shamelessly taken from ActiveSupport::ActiveSupport::Hash::Keys#assert_valid_keys
-        valid_keys = [:replace_whitespaces, :strip]
+        valid_keys = [:downcase, :replace_whitespaces, :strip]
         unknown_keys = options.keys - [valid_keys].flatten
         raise(ArgumentError, "Unknown key(s): #{unknown_keys.join(", ")}") unless unknown_keys.empty?
 
@@ -99,9 +99,19 @@ module AegisNet # :nodoc:
 
         n_str = AegisNet::StringNormalizr::COLLATION.inject(dup) {|str, (collate_from, collate_to)| str.gsub(collate_from, collate_to)}
         n_str.strip!    if options[:strip]
+        n_str.downcase! if options[:downcase]
         n_str.gsub!(/\s+/, options[:replace_whitespaces]) if options[:replace_whitespaces]
         n_str
       end
+
+      # Performs the changes of AegisNet::StringNormalizr#normalize in place,
+      # returning the new string.
+      # 
+      # See AegisNet::StringNormalizr#normalize for the optional parameter hash.
+      def normalize!(options = {})
+        self.replace(self.normalize(options))
+      end
+
     end
   end
 end

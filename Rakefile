@@ -9,12 +9,14 @@ Rake::TestTask.new("test") do |t|
   t.verbose = false
 end
 
-Echoe.new('string_normalizr', '0.2') do |p|
+version = File.read("./VERSION")
+
+Echoe.new('string_normalizr', version) do |p|
   p.description    = "Let String instances be conviently normalized"
   p.url            = "http://github.com/carpodaster/string_normalizr"
   p.author         = "Carsten Zimmermann"
   p.email          = "carp@hacksocke.de"
-  p.ignore_pattern = ["tmp/*", "script/*", "nbproject/*"]
+  p.ignore_pattern = ["tmp/*", "script/*", "nbproject/*", "nbproject/private/*"]
   p.development_dependencies = []
 end
 

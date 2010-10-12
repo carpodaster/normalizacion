@@ -21,6 +21,7 @@ Or use it as a plugin with your Rails app:
 * handle punctuation marks
 
 === Changelog
+* 0.3: Added normalize! for in-place normalization and activated downcase option
 * 0.2: Normalization can now be customized via an options hash.
 * 0.1: Initial version
 

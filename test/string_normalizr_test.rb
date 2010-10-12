@@ -17,6 +17,18 @@ class StringNormalizrTest < Test::Unit::TestCase
     assert_equal "foo   \n \t", "foo   \n \t".normalize(:strip => false, :replace_whitespaces => false)
   end
 
+  def test_downcase
+    assert_equal "this-is-an-example", "This is an Example".normalize(:downcase => true)
+
+  end
+
+  def test_bang
+    foo = "some stríng"
+    assert foo.respond_to?(:normalize!)
+    foo.normalize!
+    assert_equal "some-string", foo
+  end
+
   def test_accents
     assert_equal "a", "á".normalize
     assert_equal "a", "à".normalize
