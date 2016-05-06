@@ -1,4 +1,4 @@
-# String Normalizr
+# String Normalizr [![Build Status](https://travis-ci.org/carpodaster/string_normalizr.svg?branch=master)](https://travis-ci.org/carpodaster/string_normalizr)
 
 ## Simplifying the non-ASCII world
 
