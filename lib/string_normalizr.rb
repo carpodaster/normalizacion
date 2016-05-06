@@ -63,10 +63,7 @@ module AegisNet # :nodoc:
 
       # Returns a new String based on pre-defined normalization rules
       #
-      # == Parameters
-      # * +options+: optional Hash for normalization customization
-      #
-      # == Available options
+      # == Available keyword options
       # * <tt>:downcase</tt> - convert to lower case (true|false, default: false)
       # * <tt>:strip</tt> - trim leading and trailing whitespaces (true|false, default: true)
       # * <tt>:replace_whitespaces</tt> - replace whitespaces within the string with +str+
@@ -80,23 +77,11 @@ module AegisNet # :nodoc:
       #   "Tëst string with träiling whitespaces   ".normalize(:replace_whitespaces => false)
       #    => "Test string with traeiling whitespaces"
       #
-      def normalize(options = {})
-        # shamelessly taken from ActiveSupport::ActiveSupport::Hash::Keys#assert_valid_keys
-        valid_keys = [:downcase, :replace_whitespaces, :strip]
-        unknown_keys = options.keys - [valid_keys].flatten
-        raise(ArgumentError, "Unknown key(s): #{unknown_keys.join(", ")}") unless unknown_keys.empty?
-
-        # Default options
-        options = {
-          :downcase            => false,
-          :strip               => true,
-          :replace_whitespaces => "-"
-        }.merge(options)
-
+      def normalize(downcase: false, strip: true, replace_whitespaces: '-')
         n_str = AegisNet::StringNormalizr::COLLATION.inject(dup) {|str, (collate_from, collate_to)| str.gsub(collate_from, collate_to)}
-        n_str.strip!    if options[:strip]
-        n_str.downcase! if options[:downcase]
-        n_str.gsub!(/\s+/, options[:replace_whitespaces]) if options[:replace_whitespaces]
+        n_str.strip!    if strip
+        n_str.downcase! if downcase
+        n_str.gsub!(/\s+/, replace_whitespaces) if replace_whitespaces
         n_str
       end
 
@@ -104,8 +89,8 @@ module AegisNet # :nodoc:
       # returning the new string.
       #
       # See AegisNet::StringNormalizr#normalize for the optional parameter hash.
-      def normalize!(options = {})
-        replace normalize(options)
+      def normalize!(*args)
+        replace normalize(*args)
       end
     end
   end
