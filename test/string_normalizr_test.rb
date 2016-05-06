@@ -2,9 +2,7 @@ require 'test_helper'
 
 class StringNormalizrTest < MiniTest::Unit::TestCase
 
-  def test_string_integration
-    assert "some string".respond_to?(:normalize)
-  end
+  using AegisNet::StringNormalizr
 
   def test_whitespaces
     assert_equal "This-is-an-example", "This is an example".normalize
@@ -22,7 +20,6 @@ class StringNormalizrTest < MiniTest::Unit::TestCase
 
   def test_bang
     foo = "some stríng"
-    assert foo.respond_to?(:normalize!)
     foo.normalize!
     assert_equal "some-string", foo
   end

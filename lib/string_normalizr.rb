@@ -3,67 +3,63 @@ require "rubygems"
 module AegisNet # :nodoc:
   module StringNormalizr
 
-    COLLATION = {
-      'Ä' => 'Ae',
-      'Æ' => 'Ae',
-      'Å' => 'A',
-      'À' => 'A',
-      'Á' => 'A',
-      'Â' => 'A',
-      'Ç' => 'C',
-      'È' => "E",
-      'É' => "E",
-      'Ê' => "E",
-      'Ë' => 'E',
-      'Í' => 'I',
-      'Ì' => 'I',
-      'Î' => 'I',
-      'Ï' => 'I',
-      'Ñ' => 'N',
-      'Ö' => 'Oe',
-      'Œ' => 'Oe',
-      'Ø' => 'O',
-      'Ô' => 'O',
-      'Ó' => 'O',
-      'Ò' => 'O',
-      'Ü' => 'Ue',
-      'Ú' => 'U',
-      'Ù' => 'U',
-      'Ÿ' => 'Y',
-      'ä' => 'ae',
-      'æ' => 'ae',
-      'å' => 'a',
-      'à' => 'a',
-      'á' => 'a',
-      'â' => 'a',
-      'ç' => 'c',
-      'è' => 'e',
-      'é' => 'e',
-      'ê' => 'e',
-      'ë' => 'e',
-      'í' => 'i',
-      'ì' => 'i',
-      'î' => 'i',
-      'ï' => 'i',
-      'ñ' => 'n',
-      'ö' => 'oe',
-      'œ' => 'oe',
-      'ø' => 'o',
-      'ô' => 'o',
-      'ó' => 'o',
-      'ò' => 'o',
-      'ü' => 'ue',
-      'ú' => 'u',
-      'ù' => 'u',
-      'ÿ' => 'y',
-      'ß' => 'ss',
-    }
+    refine String do
 
-    def self.included(base)
-      base.send(:include, InstanceMethods)
-    end
-
-    module InstanceMethods
+      COLLATION = {
+        'Ä' => 'Ae',
+        'Æ' => 'Ae',
+        'Å' => 'A',
+        'À' => 'A',
+        'Á' => 'A',
+        'Â' => 'A',
+        'Ç' => 'C',
+        'È' => "E",
+        'É' => "E",
+        'Ê' => "E",
+        'Ë' => 'E',
+        'Í' => 'I',
+        'Ì' => 'I',
+        'Î' => 'I',
+        'Ï' => 'I',
+        'Ñ' => 'N',
+        'Ö' => 'Oe',
+        'Œ' => 'Oe',
+        'Ø' => 'O',
+        'Ô' => 'O',
+        'Ó' => 'O',
+        'Ò' => 'O',
+        'Ü' => 'Ue',
+        'Ú' => 'U',
+        'Ù' => 'U',
+        'Ÿ' => 'Y',
+        'ä' => 'ae',
+        'æ' => 'ae',
+        'å' => 'a',
+        'à' => 'a',
+        'á' => 'a',
+        'â' => 'a',
+        'ç' => 'c',
+        'è' => 'e',
+        'é' => 'e',
+        'ê' => 'e',
+        'ë' => 'e',
+        'í' => 'i',
+        'ì' => 'i',
+        'î' => 'i',
+        'ï' => 'i',
+        'ñ' => 'n',
+        'ö' => 'oe',
+        'œ' => 'oe',
+        'ø' => 'o',
+        'ô' => 'o',
+        'ó' => 'o',
+        'ò' => 'o',
+        'ü' => 'ue',
+        'ú' => 'u',
+        'ù' => 'u',
+        'ÿ' => 'y',
+        'ß' => 'ss',
+      }
 
       # Returns a new String based on pre-defined normalization rules
       #
@@ -106,16 +102,11 @@ module AegisNet # :nodoc:
 
       # Performs the changes of AegisNet::StringNormalizr#normalize in place,
       # returning the new string.
-      # 
+      #
       # See AegisNet::StringNormalizr#normalize for the optional parameter hash.
       def normalize!(options = {})
-        self.replace(self.normalize(options))
+        replace normalize(options)
       end
-
     end
   end
-end
-
-class String # :nodoc:
-  include AegisNet::StringNormalizr
 end
