@@ -1,9 +1,8 @@
 # Normalizacion [![Build Status](https://travis-ci.org/carpodaster/normalizacion.svg?branch=master)](https://travis-ci.org/carpodaster/normalizacion)
 
-## Simplifying the non-ASCII world
+This gem provides a [Refinement](http://ruby-doc.org/core-2.1.1/doc/syntax/refinements_rdoc.html) for the `String` class. It adds `String#normalize` which transliterates non-ASCII characters using a static collation table. It also replaces whitespaces with `-` and optionally downcases the string value.
 
-This gem adds `String#normalize` to easily retrieve a normalized representation
-of your String instance.
+It is very similar to what `ActiveSupport`'s `#parameterize` does, only more customizable (and without depending on ActiveSupport).
 
 ## Installation
 
@@ -20,7 +19,18 @@ Or install it yourself as:
     $ gem install normalizacion
 
 ## Usage
- "hellö world".normalize
+
+```ruby
+class YourClass
+  using Normalizacion
+
+  def to_s
+    "Schöneberger Straße"
+  end
+end
+
+YourClass.new.to_s # => "Schoenberger-Strasse"
+```
 
 ## .plan
 * support custom collation hash
@@ -28,10 +38,17 @@ Or install it yourself as:
 * handle punctuation marks
 
 ## Changelog
-* 0.3: Added normalize! for in-place normalization and activated downcase option
-* 0.2: Normalization can now be customized via an options hash.
-* 0.1: Initial version
+### v1.0.0
+* Uses Ruby 2.1 idioms: Keyword Arguments and Refinments
+* Renamed gem
+
+#### v0.3.0
+* Added `#normalize!` for in-place normalization
+* Adds downcase option
+
+### v0.2.0
+* Normalization can now be customized via an options hash.
 
 ---
 
-Copyright (c) 2010 Carsten Zimmermann, released under a BSD-type license
+Copyright (c) 2010-2016 Carsten Zimmermann, released under a BSD-type license

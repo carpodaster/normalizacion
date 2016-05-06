@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Carsten Zimmermann"]
   spec.email         = ["cz@aegisnet.de"]
 
-  spec.summary       = %q{Let String instances be conviently normalized}
+  spec.summary       = %q{Provides normalization/transliteration functionality for Strings using Ruby Refinements}
   spec.homepage      = "http://github.com/carpodaster/string_normalizr"
   spec.license       = "BSD"
 
