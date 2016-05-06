@@ -7,15 +7,17 @@ of your String instance.
 
 ## Installation
 
-```
-gem install string_normalizr
-```
+Add this line to your application's Gemfile:
 
-Or use it as a plugin with your Rails app:
+    gem 'string_normalizr'
 
-```
-ruby script/plugin install git://github.com/carpodaster/string_normalizr.git
-```
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install string_normalizr
 
 ## Usage
  "hellö world".normalize
