@@ -2,7 +2,7 @@ require 'bundler'
 
 Bundler.setup
 
-require 'string_normalizr'
+require 'normalizacion'
 
 require 'minitest/autorun'
 require 'minitest/pride'

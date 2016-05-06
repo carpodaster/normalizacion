@@ -5,7 +5,7 @@ describe 'Normalization support using Ruby Refinements' do
   subject { 'Öäß' }
 
   describe 'with refinement' do
-    using AegisNet::StringNormalizr
+    using Normalizacion
 
     it 'refines String' do
       subject.normalize.must_equal 'Oeaess'
