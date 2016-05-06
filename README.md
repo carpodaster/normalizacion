@@ -1,4 +1,4 @@
-# String Normalizr [![Build Status](https://travis-ci.org/carpodaster/string_normalizr.svg?branch=master)](https://travis-ci.org/carpodaster/string_normalizr)
+# Normalizacion [![Build Status](https://travis-ci.org/carpodaster/string_normalizr.svg?branch=master)](https://travis-ci.org/carpodaster/string_normalizr)
 
 ## Simplifying the non-ASCII world
 
@@ -9,7 +9,7 @@ of your String instance.
 
 Add this line to your application's Gemfile:
 
-    gem 'string_normalizr'
+    gem 'normalizacion'
 
 And then execute:
 
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install string_normalizr
+    $ gem install normalizacion
 
 ## Usage
  "hellö world".normalize

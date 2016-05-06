@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class StringNormalizrTest < MiniTest::Unit::TestCase
+class NormalizacionTest < MiniTest::Unit::TestCase
 
-  using AegisNet::StringNormalizr
+  using Normalizacion
 
   def test_whitespaces
     assert_equal "This-is-an-example", "This is an example".normalize

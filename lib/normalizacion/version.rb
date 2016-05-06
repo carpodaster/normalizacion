@@ -1,3 +1,3 @@
-module StringNormalizr
+module Normalizacion
   VERSION = "0.3.0"
 end

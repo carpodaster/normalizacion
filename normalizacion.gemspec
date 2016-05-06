@@ -5,7 +5,7 @@ require 'normalizacion/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "string_normalizr"
-  spec.version       = StringNormalizr::VERSION
+  spec.version       = Normalizacion::VERSION
   spec.authors       = ["Carsten Zimmermann"]
   spec.email         = ["cz@aegisnet.de"]
 
