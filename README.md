@@ -1,4 +1,4 @@
-# Normalizacion [![Build Status](https://travis-ci.org/carpodaster/string_normalizr.svg?branch=master)](https://travis-ci.org/carpodaster/string_normalizr)
+# Normalizacion [![Build Status](https://travis-ci.org/carpodaster/normalizacion.svg?branch=master)](https://travis-ci.org/carpodaster/normalizacion)
 
 ## Simplifying the non-ASCII world
 
