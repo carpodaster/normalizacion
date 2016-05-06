@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'normalizacion/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "string_normalizr"
+  spec.name          = "normalizacion"
   spec.version       = Normalizacion::VERSION
   spec.authors       = ["Carsten Zimmermann"]
   spec.email         = ["cz@aegisnet.de"]
