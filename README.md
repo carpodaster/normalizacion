@@ -1,26 +1,31 @@
-== String Normalizr
-=== Simplifying the non-ASCII world
+# String Normalizr
 
-This gem adds String#normalize to easily retrieve a normalized representation
+## Simplifying the non-ASCII world
+
+This gem adds `String#normalize` to easily retrieve a normalized representation
 of your String instance.
 
+## Installation
 
-=== Installation
- $ gem install string_normalizr
+```
+gem install string_normalizr
+```
 
 Or use it as a plugin with your Rails app:
 
- $ ruby script/plugin install git://github.com/carpodaster/string_normalizr.git
+```
+ruby script/plugin install git://github.com/carpodaster/string_normalizr.git
+```
 
-=== Usage
+## Usage
  "hellö world".normalize
 
-=== .plan
+## .plan
 * support custom collation hash
 * support more special chars by default
 * handle punctuation marks
 
-=== Changelog
+## Changelog
 * 0.3: Added normalize! for in-place normalization and activated downcase option
 * 0.2: Normalization can now be customized via an options hash.
 * 0.1: Initial version
