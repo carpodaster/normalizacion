@@ -1,31 +1,31 @@
-# -*- encoding: utf-8 -*-
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'string_normalizr/version'
 
-Gem::Specification.new do |s|
-  s.name = %q{string_normalizr}
-  s.version = "0.3"
+Gem::Specification.new do |spec|
+  spec.name          = "string_normalizr"
+  spec.version       = StringNormalizr::VERSION
+  spec.authors       = ["Carsten Zimmermann"]
+  spec.email         = ["cz@aegisnet.de"]
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Carsten Zimmermann"]
-  s.date = %q{2010-10-12}
-  s.description = %q{Let String instances be conviently normalized}
-  s.email = %q{carp@hacksocke.de}
-  s.extra_rdoc_files = ["LICENSE", "README.rdoc", "lib/string_normalizr.rb"]
-  s.files = ["LICENSE", "README.rdoc", "Rakefile", "VERSION", "init.rb", "lib/string_normalizr.rb", "string_normalizr.gemspec", "test/string_normalizr_test.rb", "Manifest"]
-  s.homepage = %q{http://github.com/carpodaster/string_normalizr}
-  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "String_normalizr", "--main", "README.rdoc"]
-  s.require_paths = ["lib"]
-  s.rubyforge_project = %q{string_normalizr}
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Let String instances be conviently normalized}
-  s.test_files = ["test/string_normalizr_test.rb"]
+  spec.summary       = %q{Let String instances be conviently normalized}
+  spec.homepage      = "http://github.com/carpodaster/string_normalizr"
+  spec.license       = "BSD"
 
-  if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-    else
-    end
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  if spec.respond_to?(:metadata)
+    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
   else
+    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
+
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir        = "exe"
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.12"
+  spec.add_development_dependency "rake", "~> 10.0"
 end

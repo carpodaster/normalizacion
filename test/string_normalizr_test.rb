@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-"
-require 'test/unit'
-require File.dirname(__FILE__) + "/../lib/string_normalizr"
+require 'test_helper'
 
-class StringNormalizrTest < Test::Unit::TestCase
-  
+class StringNormalizrTest < MiniTest::Unit::TestCase
+
   def test_string_integration
     assert "some string".respond_to?(:normalize)
   end
